@@ -31,6 +31,8 @@ class wmf_workstation::ssh {
       proxy => 'hooft.esams.wikimedia.org';
     '*.ulsfo.wmnet':
       proxy => 'bast4001.wikimedia.org';
+    ['*.wmflabs.org', '*.wmflabs']:
+      proxy => 'bastion.wmflabs.org';
   }
   
 }
