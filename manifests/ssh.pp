@@ -32,7 +32,8 @@ class wmf_workstation::ssh {
     '*.ulsfo.wmnet':
       proxy => 'bast4001.wikimedia.org';
     ['*.wmflabs.org', '*.wmflabs']:
-      proxy => 'bastion.wmflabs.org';
+      proxy         => 'bastion.wmflabs.org',
+      identity_file => $wmf_workstation::ssh_priv_key_lab;
   }
   
 }

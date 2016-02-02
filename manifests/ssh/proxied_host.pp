@@ -1,6 +1,7 @@
 define wmf_workstation::ssh::proxied_host(
   $target,
   $proxy,
+  $identity_file = undef,
   $order = '20',
 ) {
   concat::fragment { "proxied_host-${title}":

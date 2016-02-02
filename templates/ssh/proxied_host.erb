@@ -1,3 +1,6 @@
 Host <%= @title %>
+<% if @identity_file -%>
+    IdentityFile <%= @identity_file %>
+<%- end %>
     ProxyCommand ssh -a -W %h:%p <%= @proxy %>
 
