@@ -2,9 +2,11 @@ define wmf_workstation::ssh::bastion(
   $target,
   $order = '10',
 ) {
-  concat::fragment { "bastion-${title}":
-    target  => $target,
-    content => template('wmf_workstation/ssh/bastion.erb'),
-    order   => $order,
+
+  wmf_workstation::ssh::host { $title:
+    target         => $target,
+    order          => $order,
+    proxy_command  => 'none',
+    control_master => 'auto',
   }
 }

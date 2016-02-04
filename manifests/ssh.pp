@@ -7,7 +7,11 @@ class wmf_workstation::ssh {
     owner  => $wmf_workstation::user,
     mode   => '0600',
   }
-  
+
+  Wmf_workstation::Ssh::Host {
+    target => $user_ssh_conf_file,
+  }
+
   wmf_workstation::ssh::bastion { [
     'bastion.wmflabs.org',
     'bast1001.wikimedia.org',
@@ -16,12 +20,8 @@ class wmf_workstation::ssh {
     'hooft.esams.wikimedia.org',
     'iron.wikimedia.org',
   ]:
-    target => $user_ssh_conf_file,
   }
 
-  Wmf_workstation::Ssh::Proxied_host {
-    target => $user_ssh_conf_file,
-  }
   wmf_workstation::ssh::proxied_host {
     '*.eqiad.wmnet':
       proxy => 'bast1001.wikimedia.org';
@@ -34,6 +34,10 @@ class wmf_workstation::ssh {
     ['*.wmflabs.org', '*.wmflabs']:
       proxy         => 'bastion.wmflabs.org',
       identity_file => $wmf_workstation::ssh_priv_key_lab;
+  }
+
+  wmf_workstation::ssh::host { 'gerrit.wikimedia.org':
+    identity_file => $wmf_workstation::ssh_priv_key_lab,
   }
   
 }

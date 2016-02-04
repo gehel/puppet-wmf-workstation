@@ -1,0 +1,5 @@
+Host <%= @title %>
+    <%- if @identity_file -%>IdentityFile <%= @identity_file %><%- end -%>
+    <%- if @proxy_command -%>ProxyCommand <%= @proxy_command %><%- end -%>
+    <%- if @control_master -%>ProxyCommand <%= @control_master %><%- end -%>
+

@@ -4,9 +4,11 @@ define wmf_workstation::ssh::proxied_host(
   $identity_file = undef,
   $order = '20',
 ) {
-  concat::fragment { "proxied_host-${title}":
-    target  => $target,
-    content => template('wmf_workstation/ssh/proxied_host.erb'),
-    order   => $order,
+
+  wmf_workstation::ssh::host { $title:
+    target        => $target,
+    order         => $order,
+    proxy_command => "ssh -a -W %h:%p ${proxy}",
+    identity_file => $identity_file,
   }
 }
