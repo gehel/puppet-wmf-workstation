@@ -11,6 +11,12 @@ class wmf_workstation::ssh {
   Wmf_workstation::Ssh::Host {
     target => $user_ssh_conf_file,
   }
+  Wmf_workstation::Ssh::Bastion {
+    target => $user_ssh_conf_file,
+  }
+  Wmf_workstation::Ssh::Proxied_host {
+    target => $user_ssh_conf_file,
+  }
 
   wmf_workstation::ssh::bastion { [
     'bastion.wmflabs.org',
