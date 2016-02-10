@@ -42,8 +42,11 @@ class wmf_workstation::ssh {
       identity_file => $wmf_workstation::ssh_priv_key_lab;
   }
 
-  wmf_workstation::ssh::host { 'gerrit.wikimedia.org':
-    identity_file => $wmf_workstation::ssh_priv_key_lab,
+  wmf_workstation::ssh::host {
+    'gerrit.wikimedia.org':
+      identity_file => $wmf_workstation::ssh_priv_key_lab;
+    '*.wmnet':
+      identity_file => $wmf_workstation::ssh_priv_key_prod;
   }
-  
+
 }
