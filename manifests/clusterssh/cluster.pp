@@ -6,6 +6,6 @@ define wmf_workstation::clusterssh::cluster (
 
     concat::fragment { "clusterssh-cluster-${title}":
         target  => $wmf_workstation::clusterssh::clusters_conf,
-        content => inline_template("${title} ${joined_members}"),
+        content => inline_template("${title} ${joined_members}\n"),
     }
 }
