@@ -46,6 +46,9 @@ class wmf_workstation::ssh {
     ['*.wmflabs.org', '*.wmflabs']:
       proxy         => $labs_bastion,
       identity_file => $wmf_workstation::ssh_priv_key_lab;
+    '*.wikimedia.org':
+      proxy         => 'bast1001.wikimedia.org';
+      identity_file => $wmf_workstation::ssh_priv_key_prod;
   }
 
   wmf_workstation::ssh::host {
