@@ -23,7 +23,7 @@ class wmf_workstation::clusterssh {
             'elastic2009.codfw.wmnet', 'elastic2010.codfw.wmnet', 'elastic2011.codfw.wmnet', 'elastic2012.codfw.wmnet',
             'elastic2013.codfw.wmnet', 'elastic2014.codfw.wmnet', 'elastic2015.codfw.wmnet', 'elastic2016.codfw.wmnet',
             'elastic2017.codfw.wmnet', 'elastic2018.codfw.wmnet', 'elastic2019.codfw.wmnet', 'elastic2020.codfw.wmnet',
-            'elastic2021.codfw.wmnet',
+            'elastic2021.codfw.wmnet', 'elastic2022.codfw.wmnet', 'elastic2023.codfw.wmnet', 'elastic2024.codfw.wmnet'
         ],
     }
 
