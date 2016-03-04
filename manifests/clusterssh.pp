@@ -46,4 +46,11 @@ class wmf_workstation::clusterssh {
             'deployment-elastic07.deployment-prep.eqiad.wmflabs', 'deployment-elastic08.deployment-prep.eqiad.wmflabs',
         ],
     }
+
+    wmf_workstation::clusterssh::cluster { 'elastic-hypothesis':
+        members => [
+            'estest1001.eqiad.wmflabs', 'estest1002.eqiad.wmflabs',
+            'estest1003.eqiad.wmflabs', 'estest1004.eqiad.wmflabs',
+        ],
+    }
 }
