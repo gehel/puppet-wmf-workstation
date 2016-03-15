@@ -38,7 +38,8 @@ class wmf_workstation::ssh {
     '*.eqiad.wmnet':
       proxy => 'bast1001.wikimedia.org';
     '*.codfw.wmnet':
-      proxy => 'bast2001.wikimedia.org';
+    #  proxy => 'bast2001.wikimedia.org';
+      proxy => 'bast1001.wikimedia.org'; # bast2001 is currently unavailable due to hardware issues
     '*.esams.wmnet':
       proxy => 'hooft.esams.wikimedia.org';
     '*.ulsfo.wmnet':
