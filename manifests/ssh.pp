@@ -1,5 +1,7 @@
 class wmf_workstation::ssh {
-  
+
+  include wmf_workstation::ssh::known_hosts
+
   $user_ssh_conf_file = "${wmf_workstation::user_home}/.ssh/config"
 
   $labs_bastion = $wmf_workstation::is_ops ? {
