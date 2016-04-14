@@ -8,4 +8,9 @@ define wmf_workstation::clusterssh::cluster (
         target  => $wmf_workstation::clusterssh::clusters_conf,
         content => inline_template("${title} ${joined_members}\n"),
     }
+
+    file { "/etc/dsh/group/${title}":
+        content => join($members, '\n'),
+    }
+
 }
